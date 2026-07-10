@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin } from "lucide-react";
-import { COLORS } from "../../data/constants";
+import { COLORS, SOCIAL_LINKS } from "../../data/constants";
 import RevealSection from "../ui/RevealSection";
 import SectionLabel from "../ui/SectionLabel";
 
@@ -44,6 +44,26 @@ export default function Contact({ onEnter }) {
             >
               <Mail size={16} /> piyushbhuyan001@gmail.com
             </motion.a>
+            {SOCIAL_LINKS.map((s) => (
+              <motion.a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor-hover
+                whileHover={{ y: -3, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-sm font-medium px-5 py-3 rounded-full inline-flex items-center gap-2"
+                style={{
+                  color: COLORS.textPrimary,
+                  background: COLORS.surfaceAlt,
+                  border: `1px solid ${COLORS.border}`,
+                  textDecoration: "none",
+                  fontFamily: "'JetBrains Mono', monospace",
+                }}
+                dangerouslySetInnerHTML={{ __html: s.svg + ` ${s.label}` }}
+              />
+            ))}
             <span className="text-sm inline-flex items-center gap-2" style={{ color: COLORS.textSecondary }}>
               <MapPin size={15} /> Guwahati, Assam, India
             </span>

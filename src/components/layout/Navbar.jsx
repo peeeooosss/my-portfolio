@@ -1,5 +1,5 @@
 import { Menu, X } from "lucide-react";
-import { COLORS, NAV_LINKS } from "../../data/constants";
+import { COLORS, NAV_LINKS, SOCIAL_LINKS } from "../../data/constants";
 
 export default function Navbar({ scrollTo, menuOpen, setMenuOpen }) {
   return (
@@ -46,6 +46,23 @@ export default function Navbar({ scrollTo, menuOpen, setMenuOpen }) {
                 ./{link.label}
               </button>
             ))}
+            <div className="flex items-center gap-2 ml-1">
+              {SOCIAL_LINKS.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cursor-hover
+                  className="p-2 rounded-lg transition-colors"
+                  style={{ color: COLORS.textTertiary, background: "transparent", border: "none" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = COLORS.textPrimary)}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = COLORS.textTertiary)}
+                  aria-label={s.label}
+                  dangerouslySetInnerHTML={{ __html: s.svg }}
+                />
+              ))}
+            </div>
             <button
               data-cursor-hover
               onClick={() => scrollTo("contact")}
@@ -81,6 +98,21 @@ export default function Navbar({ scrollTo, menuOpen, setMenuOpen }) {
               ./{link.label}
             </button>
           ))}
+          <div className="flex items-center gap-3 pt-2" style={{ borderTop: `1px solid ${COLORS.border}` }}>
+            {SOCIAL_LINKS.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor-hover
+                className="p-2 rounded-lg"
+                style={{ color: COLORS.textSecondary, background: COLORS.surfaceAlt, border: `1px solid ${COLORS.border}` }}
+                aria-label={s.label}
+                dangerouslySetInnerHTML={{ __html: s.svg }}
+              />
+            ))}
+          </div>
         </div>
       )}
     </header>
