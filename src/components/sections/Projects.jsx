@@ -54,7 +54,20 @@ function ProjectCard({ project, index }) {
         <h3 className="text-2xl font-semibold mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif", color: COLORS.textPrimary }}>
           {project.title}
         </h3>
-        <p className="text-sm leading-relaxed" style={{ color: COLORS.textSecondary }}>{project.description}</p>
+        <p className="text-sm leading-relaxed mb-3" style={{ color: COLORS.textSecondary }}>{project.description}</p>
+        {project.tech && project.tech.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
+            {project.tech.map((t) => (
+              <span
+                key={t}
+                className="text-[10px] px-2 py-0.5 rounded-full"
+                style={{ fontFamily: "'JetBrains Mono', monospace", color: COLORS.textTertiary, background: `${COLORS.border}`, border: `1px solid ${COLORS.border}` }}
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
       <div className="relative mt-6 flex items-center gap-2 text-sm font-medium" style={{ color: hovered ? color : COLORS.textSecondary, transition: "color 0.25s ease" }}>
         Visit project

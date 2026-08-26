@@ -17,7 +17,7 @@ export const CHATBOT_KB = [
   {
     triggers: ["projects", "portfolio", "what have you built"],
     response:
-      "Here are my featured projects:\n\n🎓 AI Student LMS — EdTech platform with AI tooling → aistudentlms.netlify.app\n🍕 Project Chakna — Food-tech delivery platform → project-chakna.netlify.app\n🚗 Apex Drive — High-performance client application → apexdriveghy.netlify.app",
+      "Here are my featured projects:\n\n🚀 AURA AI — AI product studio & tech partner → tryauraai.in\n🍽️ Tablely — Restaurant QR menus & WhatsApp POS → tablely.tryauraai.in\n🎯 Arena AI — AI presentation studio → arena.tryauraai.in\n👟 HypeThrift — Thrift auction marketplace → hypethrift.vercel.app\n🎓 Orion Education — College admissions platform → orion-nine-eta.vercel.app\n🚗 Apex Drive — Car rental platform → apexdriveghy.netlify.app",
   },
   {
     triggers: ["hobby", "hobbies", "interests", "what do you do for fun", "outside work", "personal"],
